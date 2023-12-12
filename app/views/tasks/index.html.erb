@@ -1,0 +1,16 @@
+<div class="container p-5 d-flex flex-column align-items-center justify-content-center">
+  <h1 class="text-danger">TASKS</h1>
+
+  <ul class="mt-5 list-group w-25">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item mb-3 border rounded d-flex justify-content-around">
+         <%= check_box_tag "task_ids[]", task.id %>
+        <%= link_to task.title, task_path(task) %>
+        <%= link_to "Delete",
+            task_path(task),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </li>
+    <% end %>
+    <button class="btn btn-dark mt-3"><%= link_to "Add a new task", task_path('new') %></button>
+  </ul>
+</div>

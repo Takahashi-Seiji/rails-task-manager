@@ -1,0 +1,11 @@
+<div class="container p-5 d-flex flex-column align-items-center justify-content-center">
+  <h1 class="text-warning mb-3">TASK</h1>
+
+  <div class="d-flex flex-column align-items-center justify-content-center border rounded p-3 mb-3">
+    <h2 class="text-info"><%= @task.title %></h2>
+    <h3 class="text-danger mt-2">Details: <%= @task.details %></h3>
+    <h4 class="text-success">Completed: <%= @task.completed %></h4>
+  </div>
+  <%= link_to "Edit Task", edit_task_path %>
+  <%= link_to 'Back to Tasks', tasks_path %>
+</div>
